@@ -44,15 +44,25 @@ public class TestAnnotionDemo
 		List<Integer> copyDataTest = new ArrayList<>(dataTest );
 		//chcemy przetestowac dzialanie poprawnosc algorytmu sortwanie
 		Collections.sort( copyDataTest );   //gotowy  i optymalny algorytm sortowania
-		System.out.println( copyDataTest );
+//		System.out.println( copyDataTest );
 		/*Zadanie 3
 			Zamiast wywolywac System.out.println   (jak wyzej) nalezy napisac test ktory zostanie zaliczony jesli w s z y s t k i e liczby po sortowaniu
 			są we właściwej kolejności
 			Integer value = dataTest.get( 2 );  //zwraca wartosc z komorki o indeksie 2
 		 */
 
+		//i: 0 1 2 3  ..  7  8   (size = 9)
+		//   1 2 3 4 ...  9  8
+		boolean tested = true;
+		for(int i = 0; i < copyDataTest.size(); i++) {
+			if(copyDataTest.get( i + 1 ) - 1 < copyDataTest.get( i )) {  //spr. czy istnieje para (kolejnych komorek) ktorych wartosci sa nieuporzadkowane po sortowaniu
+				tested = false;   //ustawiamy informacje ze ciąg nie jest posortowany
+				break;   //nie ma sensu sprawdzac dalej bo juz wiemy ze lista nie jest posortowany
+			}
+		}
 
 		//na koncy powinna byc odpowiednia asercja
+		assertTrue( tested );
 	}
 
 	@Test
