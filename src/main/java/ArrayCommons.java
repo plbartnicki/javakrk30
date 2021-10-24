@@ -12,10 +12,11 @@ public class ArrayCommons
 	//	(np. w komentarzach możesz określić co dany przypadek testowy będzie testował).
 	//
 	public static Double minValueGreaterThan0(Double []numbers) {
-		int numbersSize = numbers.length;
 		if(numbers == null || numbers.length == 0) {
 			return null;   //null jest informacja ze nie ma zadnej wartosci dodatniej w numbers[]  (zamiast tego bezpieczniej jest rzucic wyjatek)
 		}
+
+		int numbersSize = numbers.length;
 
 		Double resultCandidate = null;
 		int k = 0;
