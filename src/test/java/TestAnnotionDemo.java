@@ -32,6 +32,8 @@ public class TestAnnotionDemo
 		}
 	}
 
+	//istnieja rownie adnotacje @After i @AfterClass
+
 	@Test
 	public void testGet()
 	{
